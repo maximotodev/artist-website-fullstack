@@ -87,18 +87,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# --- TEMPORARY DEBUGGING STEP ---
-# This allows us to confirm if the issue is CORS or something else.
-CORS_ALLOW_ALL_ORIGINS = True 
-# We will comment this out for now, but keep it for later
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "https://alyssagrey.vercel.app",
-# ]
-# Add this list to specify which origins are allowed to make requests
+
+# This list specifies exactly which frontends are allowed to talk to our API.
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "https://alyssagrey.vercel.app",
 ]
 
 ROOT_URLCONF = 'artist_project.urls'
