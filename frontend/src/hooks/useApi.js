@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+// Use the production URL from an environment variable, but if it's not available (i.e., in local development),
+// fall back to the local Django server's address.
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://127.0.0.1:8000";
 
 // Rename the function to useApi
 export function useApi(endpoint) {
@@ -15,7 +18,7 @@ export function useApi(endpoint) {
     setLoading(true);
     setError(null);
 
-    fetch(`${API_BASE_URL}/${endpoint}`)
+    fetch(`${API_BASE_URL}/api/${endpoint}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok.");
