@@ -1,0 +1,118 @@
+/* frontend/src/pages/PageStyles.css */
+.page-container {
+  padding: 180px 40px 40px 40px; /* Top padding to clear the fixed navbar */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: "Cinzel", serif;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.status-message {
+  color: #aaa;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Tour List Styles */
+.tour-list {
+  list-style: none;
+  padding: 0;
+}
+.tour-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease;
+}
+.tour-item:hover {
+  background-color: #1a1a1a;
+}
+.tour-date {
+  font-weight: bold;
+}
+.tour-city {
+  color: #ccc;
+}
+.tour-venue {
+  color: #aaa;
+}
+.ticket-link {
+  color: #fff;
+  background-color: #03a9f4;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Video Grid Styles */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+.video-card {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-title {
+  padding: 15px;
+  font-size: 1.2em;
+  text-align: center;
+}
+/* News List Styles */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between news articles */
+}
+
+.news-article-card {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-left: 4px solid #03a9f4; /* A highlight border */
+  border-radius: 4px;
+}
+
+.news-headline {
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+  font-family: "Cinzel", serif;
+}
+
+.news-date {
+  color: #aaa;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+
+.news-content {
+  color: #ddd;
+  font-size: 1.1em;
+  line-height: 1.6;
+}

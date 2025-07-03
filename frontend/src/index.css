@@ -1,0 +1,21 @@
+/* frontend/src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* --- GLOBAL THEME --- */
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+}
+
+/* Style for active NavLink */
+.nav-link.active {
+  color: #03a9f4; /* A highlight color */
+  text-shadow: 0 0 10px #03a9f4;
+}

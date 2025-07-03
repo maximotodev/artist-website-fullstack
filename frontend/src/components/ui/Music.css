@@ -1,0 +1,107 @@
+/* frontend/src/Music.css */
+
+.music-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* --- Track Card Styles --- */
+.track-card {
+  background: #282c34;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(3, 169, 244, 0.3);
+}
+
+.album-art-wrapper {
+  position: relative;
+}
+
+.album-art {
+  width: 100%;
+  display: block;
+}
+
+.track-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.track-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  min-height: 44px; /* Ensures consistent card height */
+}
+
+.audio-player {
+  width: 100%;
+  height: 40px;
+  margin-top: auto;
+}
+
+/* --- Loader and Status Styles --- */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-left-color: #03a9f4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-message {
+  color: #aaa;
+  font-size: 1.2em;
+}
+.error-message {
+  color: #ff6b6b;
+  font-size: 1.2em;
+}
+
+/* --- Skeleton Loader Styles --- */
+.skeleton-card {
+  background-color: #282c34;
+  border-radius: 12px;
+  height: 350px; /* Approximate height of a real card */
+  opacity: 0.5;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
