@@ -43,8 +43,22 @@ SECRET_KEY = 'django-insecure-1zmhpq*=%c290-q2q#vcdhftz-22qrqj%3t$*25wti+up1%_#g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
 
+# Get the hostname from Render's environment variables
+RENDER_EXTERNAL_HOSTNAME = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# Also add your Vercel frontend domain
+# This isn't always required but is a good practice
+VERCEL_URL = os.getenv('VERCEL_URL', 'alyssagrey.vercel.app')
+if VERCEL_URL:
+    ALLOWED_HOSTS.append(f'.{VERCEL_URL}') # The dot allows subdomains
+    ALLOWED_HOSTS.append(VERCEL_URL)
 
 # Application definition
 
@@ -73,6 +87,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# --- TEMPORARY DEBUGGING STEP ---
+# This allows us to confirm if the issue is CORS or something else.
+CORS_ALLOW_ALL_ORIGINS = True 
+# We will comment this out for now, but keep it for later
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "https://alyssagrey.vercel.app",
+# ]
 # Add this list to specify which origins are allowed to make requests
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
